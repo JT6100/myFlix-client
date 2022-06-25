@@ -18,6 +18,7 @@ export class MovieView extends React.Component {
                             <span className='label'>Descriton: </span>
                             <span className='value'>{movie.Description}</span>
                             </div>
+                            <button>back</button>
 
                             </div>
         );
