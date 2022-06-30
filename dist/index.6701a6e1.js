@@ -25420,6 +25420,15 @@ class MainView extends _reactDefault.default.Component {
             selectedMovie: null
         };
     }
+    componentDidMount() {
+        _axiosDefault.default.get('https://movieapi6100.herokuapp.com/').then((response)=>{
+            this.setState({
+                movies: response.data
+            });
+        }).catch((error)=>{
+            console.log(error);
+        });
+    }
     setSelectedMovie = (movie)=>{
         this.setState({
             selectedMovie: movie
@@ -25431,7 +25440,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 24
+                lineNumber: 36
             },
             __self: this,
             children: "The list is empty!"
@@ -25440,7 +25449,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 27
+                lineNumber: 39
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25449,7 +25458,7 @@ class MainView extends _reactDefault.default.Component {
                 ,
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 29
+                    lineNumber: 41
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25459,7 +25468,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 31
+                        lineNumber: 43
                     },
                     __self: this
                 }, movie._id)
