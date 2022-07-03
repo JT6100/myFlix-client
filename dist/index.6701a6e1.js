@@ -25533,8 +25533,10 @@ class MovieCard extends _reactDefault.default.Component {
     }
 }
 MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
-        Title: PropTypes.string
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
 };
