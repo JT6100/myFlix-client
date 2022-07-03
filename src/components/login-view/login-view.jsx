@@ -27,7 +27,7 @@ export class Loginview extends React.Component
         });
     }
 
-    const handleSubmit = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
         console.log(username, password);
         /* Send a request to the server for authentication */

@@ -28858,8 +28858,8 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class Loginview extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(props1){
+        super(props1);
         this.state = {
             username: '',
             pasword: ''
@@ -28878,22 +28878,23 @@ class Loginview extends React.Component {
             pasword: event.target.value
         });
     }
-    handleSubmit() {
-        const { username , password  } = this.state;
+    handleSubmit = (e)=>{
+        e.preventDefault();
         console.log(username, password);
-    }
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
+    };
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 37
+                lineNumber: 40
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 38
+                        lineNumber: 41
                     },
                     __self: this,
                     children: [
@@ -28904,7 +28905,7 @@ class Loginview extends React.Component {
                             onChange: this.onUsernameChange,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 40
+                                lineNumber: 43
                             },
                             __self: this
                         })
@@ -28913,7 +28914,7 @@ class Loginview extends React.Component {
                 /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 42
+                        lineNumber: 45
                     },
                     __self: this,
                     children: [
@@ -28924,7 +28925,7 @@ class Loginview extends React.Component {
                             onChange: this.onPasswordChange,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 44
+                                lineNumber: 47
                             },
                             __self: this
                         })
@@ -28935,7 +28936,7 @@ class Loginview extends React.Component {
                     onClick: this.handleSubmit,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 46
+                        lineNumber: 49
                     },
                     __self: this,
                     children: "Submit"
